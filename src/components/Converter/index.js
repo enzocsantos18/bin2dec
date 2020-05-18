@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Container } from './styles';
 import * as Yup from 'yup';
 import { Form, Input } from '@rocketseat/unform';
+import { Container } from './styles';
 
 const schema = Yup.object().shape({
   binary: Yup.string('The value must be a sequence of zeros and ones.')

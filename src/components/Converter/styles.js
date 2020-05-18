@@ -6,7 +6,7 @@ export const Container = styled.div`
   /* box-shadow: 0px 0px 5px 3px rgba(219, 219, 219, 0.35); */
   height: 300px;
   width: 100%;
-  max-width: 360px;
+  max-width: 480px;
   border-radius: 4px;
   margin: 20px auto;
   display: flex;
@@ -45,6 +45,11 @@ export const Container = styled.div`
       color: #fff;
       font-size: 16px;
       font-weight: bold;
+    }
+
+    span {
+      color: #ed5045;
+      margin-bottom: 10px;
     }
   }
 `;
