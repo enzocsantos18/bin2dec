@@ -1,4 +1,5 @@
 {
+  "homepage": "http://enzocsantos18.github.io/bin2dec",
   "name": "bin2dec",
   "version": "0.1.0",
   "private": true,
@@ -18,6 +19,8 @@
     "yup": "^0.28.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "depoly": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,6 +48,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "gh-pages": "^2.2.0",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
