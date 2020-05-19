@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Form, Input } from '@rocketseat/unform';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import { MdFilterNone } from 'react-icons/md';
 import { Container, Conversion } from './styles';
@@ -15,7 +16,7 @@ const schema = Yup.object().shape({
 });
 
 function Converter() {
-  const notify = () => toast('Decimal number copied!');
+  const notify = () => toast.success('Decimal number copied!', {});
 
   const [decimal, setDecimal] = useState();
   function handleSubmit(data) {
@@ -40,17 +41,19 @@ function Converter() {
         />
         <button type="submit">Convert</button>
       </Form>
-      {decimal != null ? (
-        <CopyToClipboard onCopy={notify} text={decimal}>
-          <Conversion>
-            <h1>Result:</h1>
 
-            <div>
-              <p>{decimal}</p>
-              <MdFilterNone size={16} />
-            </div>
-          </Conversion>
-        </CopyToClipboard>
+      {decimal != null ? (
+        <Conversion>
+          <h1>Result:</h1>
+          <Tooltip title="Copy" enterDelay={200} leaveDelay={200}>
+            <CopyToClipboard onCopy={notify} text={decimal}>
+              <div>
+                <p>{decimal}</p>
+                <MdFilterNone size={16} />
+              </div>
+            </CopyToClipboard>
+          </Tooltip>
+        </Conversion>
       ) : (
         <></>
       )}
