@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #ffff;
   padding: 20px;
+  /* background-color: red; */
   /* box-shadow: 0px 0px 5px 3px rgba(219, 219, 219, 0.35); */
   height: 300px;
   width: 100%;
@@ -50,6 +50,35 @@ export const Container = styled.div`
     span {
       color: #ed5045;
       margin-bottom: 10px;
+    }
+  }
+`;
+export const Conversion = styled.div`
+  height: 300px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 4px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    background-color: #dbddff;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      color: #3d3d3d;
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: #babeff;
+      cursor: pointer;
     }
   }
 `;
