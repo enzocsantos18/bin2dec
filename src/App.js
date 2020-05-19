@@ -7,9 +7,17 @@ import Converter from './components/Converter';
 
 function App() {
   return (
-    <div className="App">
-      <ToastContainer autoClose={2000} />
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <GlobalStyle />
+      <ToastContainer autoClose={2000} />
       <Converter />
     </div>
   );

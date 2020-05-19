@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 20px;
-  /* background-color: red; */
-  /* box-shadow: 0px 0px 5px 3px rgba(219, 219, 219, 0.35); */
-  height: 300px;
+  background-color: white;
   width: 100%;
   max-width: 480px;
   border-radius: 4px;
-  margin: 20px auto;
+  box-shadow: 0px 0px 5px 2px rgba(219, 219, 219, 0.4);
+
   display: flex;
   flex-direction: column;
 
@@ -45,6 +44,11 @@ export const Container = styled.div`
       color: #fff;
       font-size: 16px;
       font-weight: bold;
+      transition: 0.2s background;
+
+      &:hover {
+        background-color: #422399;
+      }
     }
 
     span {
@@ -54,7 +58,6 @@ export const Container = styled.div`
   }
 `;
 export const Conversion = styled.div`
-  height: 300px;
   width: 100%;
   max-width: 480px;
   border-radius: 4px;

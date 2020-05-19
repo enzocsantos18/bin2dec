@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import back from '../assets/back.svg';
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -20,6 +20,8 @@ html, body, #root{
 
 body{
   -webkit-font-smoothing: antialiased;
+  background: url(${back})  no-repeat 50%;
+
 }
 
 body, input, button{

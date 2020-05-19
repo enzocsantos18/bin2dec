@@ -17,26 +17,43 @@ const schema = Yup.object().shape({
 function Converter() {
   const notify = () => toast('Decimal number copied!');
 
-  const [decimal, setDecimal] = useState(5);
-  function handleSubmit(data) {}
+  const [decimal, setDecimal] = useState();
+  function handleSubmit(data) {
+    let decimalValue = 0;
+    for (let i = data.binary.length; i >= 0; i -= 1) {
+      if (data.binary[i] === '1') decimalValue += 1 * 2 ** i;
+      else decimalValue += 0 * 2 ** i;
+    }
+
+    setDecimal(decimalValue);
+  }
   return (
     <Container>
       <h1>Binary to Decimal Converter</h1>
       <p>Type only 8 characters using only 1 and 0.</p>
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="binary" maxLength={8} placeholder="Ex: 1001001" />
+        <Input
+          onChange={() => setDecimal()}
+          name="binary"
+          maxLength={8}
+          placeholder="Ex: 1001001"
+        />
         <button type="submit">Convert</button>
       </Form>
-      <CopyToClipboard onCopy={notify} text={decimal}>
-        <Conversion>
-          <h1>Result:</h1>
+      {decimal != null ? (
+        <CopyToClipboard onCopy={notify} text={decimal}>
+          <Conversion>
+            <h1>Result:</h1>
 
-          <div>
-            <p>{decimal}</p>
-            <MdFilterNone size={16} />
-          </div>
-        </Conversion>
-      </CopyToClipboard>
+            <div>
+              <p>{decimal}</p>
+              <MdFilterNone size={16} />
+            </div>
+          </Conversion>
+        </CopyToClipboard>
+      ) : (
+        <></>
+      )}
     </Container>
   );
 }
